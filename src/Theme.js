@@ -9,6 +9,15 @@ const Theme = createMuiTheme({
     background: {
         normal: '#FFFFFF'
     },
+    typography: {
+        useNextVariants: true, // To enable switching to Typography v2
+        // Use the system font over Roboto.
+        fontFamily: "'Raleway', sans-serif",
+        fontSize: 14,
+        fontWeightLight: 300,
+        fontWeightRegular: 400,
+        fontWeightMedium: 500
+    },
 })
 
 function createTheme() {
