@@ -4,8 +4,16 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import createTheme from './Theme'
+
+import {
+  initGoogleAnalytics,
+  trackPage,
+  analyticsClick
+} from './analytics/GA';
 
 import Button from '@material-ui/core/Button'
 
@@ -56,47 +64,56 @@ const HealthLink = props =>
 const ContactLink = props =>
   <a href="mailto:james@britton.app" data-rel="external" {...props}>{props.children}</a>
 
+
+// Initialise the Goolge Analyiics tracking
+initGoogleAnalytics()
+
 class App extends Component {
+
   render() {
     const { classes } = this.props;
 
     return (
-      <MuiThemeProvider theme={createTheme()}>
-        <div className="App">
-          <div className="App-nav" >
-            <div>
-              <Button color="primary"
-                component={ContactLink}
-                className={classes.button}>
-                Contact
+      <Router onUpdate={trackPage()}>
+        <MuiThemeProvider theme={createTheme()}>
+          <div className="App">
+            <div className="App-nav" >
+              <div>
+                <Button color="primary"
+                  component={ContactLink}
+                  onClick={() => { analyticsClick("Contact") }}
+                  className={classes.button}>
+                  Contact
                 </Button>
-              <Button
-                color="primary"
-                component={HealthLink}
-                className={classes.button}>
-                Health
+                <Button
+                  color="primary"
+                  component={HealthLink}
+                  onClick={() => { analyticsClick("Health") }}
+                  className={classes.button}>
+                  Health
                 </Button>
+              </div>
+              <header className="App-main">
+                <Lottie options={rocketOptions}
+                  height={400}
+                  width={400}
+                  isStopped={false}
+                  isPaused={false}
+                />
+                <p>Launching soon...</p>
+                <SocialMediaIcons
+                  icons={socialMediaIcons}
+                  iconSize={'1em'}
+                  iconColor={'#455a64'}
+                />
+              </header>
             </div>
-            <header className="App-main">
-              <Lottie options={rocketOptions}
-                height={400}
-                width={400}
-                isStopped={false}
-                isPaused={false}
-              />
-              <p>Launching soon...</p>
-              <SocialMediaIcons
-                icons={socialMediaIcons}
-                iconSize={'1em'}
-                iconColor={'#455a64'}
-              />
-            </header>
+            <div className="App-footer">
+              <p>© 2018 James Britton</p>
+            </div>
           </div>
-          <div className="App-footer">
-            <p>© 2018 James Britton</p>
-          </div>
-        </div>
-      </MuiThemeProvider>
+        </MuiThemeProvider>
+      </Router>
     );
   }
 }
