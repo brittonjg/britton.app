@@ -1,26 +1,26 @@
-import './App.css'
+import "./App.css"
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { withStyles } from "@material-ui/core/styles"
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { MuiThemeProvider } from '@material-ui/core/styles'
-import createTheme from './Theme'
+import { MuiThemeProvider } from "@material-ui/core/styles"
+import createTheme from "./Theme"
 
 import {
   initGoogleAnalytics,
   trackPage,
   analyticsClick
-} from './analytics/GA';
+} from "./analytics/GA";
 
-import Button from '@material-ui/core/Button'
+import Button from "@material-ui/core/Button"
 
-import Lottie from 'react-lottie'
-import rocket from './animations/rocket.json'
+import Lottie from "react-lottie"
+import rocket from "./animations/rocket.json"
 
-import SocialMediaIcons from 'react-social-media-icons';
+import SocialMediaIcons from "react-social-media-icons";
 
 const styles = theme => ({
   button: {
