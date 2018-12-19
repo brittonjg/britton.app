@@ -23,17 +23,21 @@
   flex-direction: column;
 }
 
+.App-bottom{
+  position:absolute;
+  bottom:0;
+  width: 100%;
+}
+
 .App-footer{
   display: flex;
   background: #1c313a;
   color: #FFFFFF;
-  width: 100%;
+  margin-top: 10px;
   font-size: calc(8px + 1vmin);
   justify-content: center;
   align-items: center;
   height: 65px;
-  position:absolute;
-  bottom:0;
 }
 
 .button{

@@ -17,6 +17,7 @@ import {
 
 import Button from "@material-ui/core/Button"
 
+import { isMobile } from 'react-device-detect'
 import Lottie from "react-lottie"
 import rocket from "./animations/rocket.json"
 
@@ -95,21 +96,23 @@ class App extends Component {
               </div>
               <header className="App-main">
                 <Lottie options={rocketOptions}
-                  height={400}
-                  width={400}
+                  height={isMobile ? 350 : 400}
+                  width={isMobile ? 350 : 400}
                   isStopped={false}
                   isPaused={false}
                 />
                 <p>Launching soon...</p>
-                <SocialMediaIcons
-                  icons={socialMediaIcons}
-                  iconSize={'1em'}
-                  iconColor={'#455a64'}
-                />
               </header>
             </div>
-            <div className="App-footer">
-              <p>© 2018 James Britton</p>
+            <div className="App-bottom">
+              <SocialMediaIcons
+                icons={socialMediaIcons}
+                iconSize={'1em'}
+                iconColor={'#455a64'}
+              />
+              <div className="App-footer">
+                <p>© 2018 James Britton</p>
+              </div>
             </div>
           </div>
         </MuiThemeProvider>
