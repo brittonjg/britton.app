@@ -5,7 +5,5 @@ cache:
   directories:
     - node_modules
 script:
-  - react-scripts test
-  - react-scripts build
-before_install:
-  - ./dev.sh update
+  - npm test
+  - npm run-script build
