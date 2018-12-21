@@ -21,7 +21,7 @@ import { isMobile } from 'react-device-detect'
 import Lottie from "react-lottie"
 import rocket from "./animations/rocket.json"
 
-import SocialMediaIcons from "react-social-media-icons";
+import Footer from "./Footer"
 
 const styles = theme => ({
   button: {
@@ -39,25 +39,6 @@ const rocketOptions = {
     preserveAspectRatio: 'xMidYMid slice'
   }
 }
-
-const socialMediaIcons = [
-  {
-    url: 'https://www.linkedin.com/in/jgbritton/',
-    className: 'fa-linkedin',
-  },
-  {
-    url: 'https://github.com/brittonjg',
-    className: 'fa-github',
-  },
-  {
-    url: 'https://www.instagram.com/britton.jg/',
-    className: 'fa-instagram',
-  },
-  {
-    url: 'https://www.last.fm/user/mcdillon',
-    className: 'fa-lastfm',
-  },
-];
 
 const HealthLink = props =>
   <a href="https://health.britton.app" target="_blank" rel="noopener noreferrer" {...props} >{props.children}</a>
@@ -104,16 +85,7 @@ class App extends Component {
                 <p>Launching soon...</p>
               </header>
             </div>
-            <div className="App-bottom">
-              <SocialMediaIcons
-                icons={socialMediaIcons}
-                iconSize={'1em'}
-                iconColor={'#455a64'}
-              />
-              <div className="App-footer">
-                <p>© 2018 James Britton</p>
-              </div>
-            </div>
+            <Footer />
           </div>
         </MuiThemeProvider>
       </Router>
