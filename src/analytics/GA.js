@@ -2,21 +2,21 @@ import ReactGA from 'react-ga'
 
 import { isDevEnv } from '../env/Helpers'
 
-import { GA_Dev, GA_Prod } from '../config/Google'
-
 /**
  * Initialises Googles Analytics
  * 
  * Note: Different tracking codes must be used per environment
  */
 export function initGoogleAnalytics() {
+    const GA_CODE = process.env.REACT_APP_GA_CODE
+
     if (isDevEnv()) {
-        ReactGA.initialize(GA_Dev,
+        ReactGA.initialize(GA_CODE,
             {
                 debug: false,//Can be updated when necessary
             })
     } else {
-        ReactGA.initialize(GA_Prod);
+        ReactGA.initialize(GA_CODE);
     }
 }
 
