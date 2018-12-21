@@ -8,4 +8,4 @@ script:
   - react-scripts test
   - react-scripts build
 before_install:
-  - dev.sh update
+  - ./dev.sh update
