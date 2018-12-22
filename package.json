@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,9 +44,5 @@
     "jest": "^23.6.0",
     "react-test-renderer": "^16.7.0",
     "sw-precache": "^5.2.1"
-  },
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
   }
 }
