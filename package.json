@@ -10,7 +10,7 @@
     "react-ga": "^2.5.6",
     "react-lottie": "^1.2.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "2.1.2",
     "react-social-media-icons": "^1.0.3"
   },
   "scripts": {
