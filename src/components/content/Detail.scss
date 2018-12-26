@@ -1,0 +1,51 @@
+@import "../../Theme.scss";
+
+.jobWrapper{
+    height: '100%';
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.jobCard{
+    max-height: 800px;
+    width: 600px;
+}
+
+.jobCard CardPrimaryContent{
+    background: bg-colour;
+}
+
+.jobCard h1{
+    height: 5px;
+    margin-top: 5px;
+    padding-left: 10px;
+    font-weight: 500;
+    text-align:justify;
+    width: auto;
+    line-height: 1.6;
+}
+
+.jobCard img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.jobCard p{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 300;
+    font-size: calc(6px + 1vmin);
+    line-height: 1.6;
+    text-align:justify;
+}
+
+@media screen and (max-width: 1300px) {
+    .jobCard{
+        width: 350px;
+    }
+}
