@@ -1,4 +1,6 @@
-import "./App.css"
+import "./Footer.scss"
+
+import colours from '../../Theme.scss';
 
 import React, { Component } from "react"
 
@@ -27,15 +29,12 @@ class Footer extends Component {
 
     render() {
         return (
-            <div className="App-bottom">
+            <div className="Footer">
                 <SocialMediaIcons
                     icons={socialIcons}
-                    iconSize={'1em'}
-                    iconColor={'#455a64'}
+                    iconSize={'2em'}
+                    iconColor={colours.textColour}
                 />
-                <div className="App-footer">
-                    <p>© 2018 James Britton</p>
-                </div>
             </div>
         )
     }

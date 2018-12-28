@@ -1,0 +1,9 @@
+@import "../../Theme.scss";
+
+.scrolling-wrapper-flexbox {
+  overflow:auto;
+
+  .card {
+    flex: 0 0 auto;
+  }
+}
