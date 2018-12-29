@@ -3,6 +3,7 @@ node_js:
   - "stable"
 install:
   - npm install -g codecov
+  - ./dev.sh update
 cache:
   directories:
     - node_modules
