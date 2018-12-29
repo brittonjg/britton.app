@@ -29,7 +29,7 @@ class Detail extends Component {
             }}>
                 <Card className="jobCard" outlined>
                     <CardPrimaryContent>
-                        <img alt="Example of what I created at this employer" src={imageUrl} />
+                        {typeof imageUrl != 'undefined' ? <img alt="Example of what I created at this employer" src={imageUrl} /> : null}
                     </CardPrimaryContent>
                     <h1>{title}</h1>
                     <ul >

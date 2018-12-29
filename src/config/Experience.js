@@ -3,7 +3,7 @@ export const jobs = [
     {
         title: "EYN",
         background: "#05294B",
-        imageUrl: "./images/work/eyn.png",
+        imageUrl: "./images/work/eyn.jpg",
         content: [
             "Responsible for designing, engineering and maintaining front end services.Includes Android app, Web application and Restful API services",
             "Facilitated team meetings and implemented agile principles to improve team efficiency and organisation",
@@ -20,7 +20,7 @@ export const jobs = [
     {
         title: "Fanatix",
         background: "#EB6F2E",
-        imageUrl: "./images/test_pattern.svg"
+        imageUrl: "./images/work/fanatix.png"
     },
     {
         title: "Mezzo",
@@ -30,6 +30,5 @@ export const jobs = [
     {
         title: "Jda.",
         background: "#4BA8DB",
-        imageUrl: "./images/test_pattern.svg"
     },
 ]
