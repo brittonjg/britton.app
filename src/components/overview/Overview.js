@@ -7,6 +7,8 @@ import React, { Component } from "react"
 import Button from "@material/react-button"
 import MaterialIcon from '@material/react-material-icon';
 
+import { isMobile } from "react-device-detect";
+
 import { analyticsClick } from "../../analytics/GA"
 
 import Footer from "../footer/Footer"
@@ -15,14 +17,18 @@ class Overview extends Component {
 
     render() {
         return (
-            <div className="Overview">
-                <img className="Overview-selfie" src="./images/selfie.jpeg" alt="A selfie of me" />
+            <div className="Overview" style={{ height: this.props.screenHeight }}>
+                {
+                    isMobile ? (null) : (<img className="Overview-selfie" src="./images/selfie.jpeg" alt="A selfie of me" />)
+                }
                 <div className="Overview-quote">
-                    It’s not who I am underneath,
-                    but what I do that defines me.
+                    If I waited until I was ready,
+                    I would be waiting a life time.
                 </div>
                 <p className="Overview-blurb-bold">
-                    Senior developer. Triathlete. Emojiuser <span role="img" aria-label="Strong">💪</span>
+                    Senior developer <span role="img" aria-label="Laptop">💻</span><br />
+                    Triathlete <span role="img" aria-label="Trainer">👟</span><br />
+                    Emojiuser <span role="img" aria-label="Strong">💪</span>
                 </p>
                 <p className="Overview-blurb">
                     Experienced software developer, specialising in Android and web technologies. Currently Mobile Lead at <a href="https://www.linkedin.com/company/eyn-limited/" target="_blank" rel="noopener noreferrer">EYN </a>

@@ -9,6 +9,7 @@ import Card, {
     CardActions,
     CardActionIcons
 } from "@material/react-card";
+import { isMobile } from "react-device-detect";
 
 class Detail extends Component {
 
@@ -20,7 +21,11 @@ class Detail extends Component {
             content = []
         } = this.props.experience
 
-        const rightSectionHeight = this.props.screenHeight - ((this.props.screenHeight / 100) * 5)
+        let rightSectionHeight = this.props.screenHeight
+
+        if (isMobile === false) {
+            rightSectionHeight = this.props.screenHeight - ((this.props.screenHeight / 100) * 5)
+        }
 
         return (
             <div className="jobWrapper" style={{

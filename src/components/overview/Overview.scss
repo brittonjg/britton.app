@@ -61,7 +61,7 @@
 }
 
 .buttons-horizontal .mdc-button{
-    margin: 10px 10px auto;
+    margin: 5px 5px auto;
 }
 
 @media screen and (max-width: 1000px) {
@@ -80,12 +80,13 @@
 
 @media screen and (max-height: 800px){
     .Overview{
-        padding: 25px;
+        padding: 20px;
+        text-align: center;
     }
 
     .Overview-selfie{
         width: auto;
-        height: 150px;
-        clip-path: circle(45px at center);
+        height: 200px;
+        clip-path: circle(60px at center);
     }
 }

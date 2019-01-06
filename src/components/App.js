@@ -5,6 +5,8 @@ import {
   BrowserRouter as Router
 } from "react-router-dom"
 
+import { isMobile, MobileView, BrowserView } from "react-device-detect";
+
 import {
   initGoogleAnalytics,
   trackPage
@@ -31,7 +33,15 @@ class App extends Component {
 
   componentDidMount() {
     this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
+
+    if (isMobile === false) {
+      /**
+       * Mobiles can't be resized, so there's no need to allow resizing.
+       * 
+       * This also stop jankiness with shrinking tool bars are the like
+       */
+      window.addEventListener('resize', this.updateWindowDimensions);
+    }
   }
 
   componentWillUnmount() {
@@ -45,15 +55,27 @@ class App extends Component {
   render() {
     return (
       <Router onUpdate={trackPage()}>
-        <div className="App">
-          <div className="wrapper">
-            <div id="left" style={{ height: this.state.height }}>
-              <Overview />
+        <div>
+          <MobileView>
+            <div className="App">
+              <div id="left" style={{ height: this.state.height - ((this.state.height / 100) * 10) }}>
+                <Overview />
+              </div>
+              <Experience screenHeight={this.state.height} />
             </div>
-            <div id="right" style={{ height: this.state.height }}>
-              <Experience screenHeight={this.state.height} />}
+          </MobileView>
+          <BrowserView>
+            <div className="App">
+              <div className="wrapper">
+                <div id="left" style={{ height: this.state.height }}>
+                  <Overview />
+                </div>
+                <div id="right" style={{ height: this.state.height }}>
+                  <Experience screenHeight={this.state.height} />
+                </div>
+              </div>
             </div>
-          </div>
+          </BrowserView>
         </div>
       </Router >
     );

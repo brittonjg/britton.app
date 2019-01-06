@@ -21,6 +21,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
 #right { 
   background-color: grey;
   overflow:hidden;
@@ -31,6 +32,9 @@
    #left { 
     float: none;
     margin-right:0;
+    // overflow:auto;
+    // position: relative;
+    // overflow-y: 'scroll';
     width:auto;
     border:0;
   }
