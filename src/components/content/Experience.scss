@@ -8,6 +8,14 @@
   }
 }
 
+.footer{
+  background: $bg-footer;
+  padding: 20px;
+  text-align: center;
+  color: #d2e7ef;
+  font-size: calc(8px + 0.8vmin);
+}
+
 @media screen and (max-width: 1000px) {
   .scrolling-wrapper-flexbox {
   overflow:inherit;

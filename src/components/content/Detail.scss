@@ -16,7 +16,7 @@
 }
 
 .jobCard CardPrimaryContent{
-    background: bg-colour;
+    background: $bg-colour;
 }
 
 .jobCard h1{
@@ -24,7 +24,7 @@
     margin-top: 5px;
     padding-left: 10px;
     font-weight: 500;
-    text-align:justify;
+    text-align:center;
     width: auto;
     line-height: 1.6;
     color: $text-colour;
@@ -36,8 +36,16 @@
     width: 100%;
 }
 
-.jobCard p{
-    padding-left: 10px;
+.jobCard ul{
+    padding-top: 10px;
+    font-weight: 300;
+    font-size: calc(6px + 1vmin);
+    line-height: 1.6;
+    text-align:justify;
+    list-style-type: circle;
+}
+
+.jobCard li{
     padding-right: 10px;
     font-weight: 300;
     font-size: calc(6px + 1vmin);
@@ -45,13 +53,9 @@
     text-align:justify;
 }
 
-.jobCard li{
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: 300;
-    font-size: calc(6px + 1vmin);
-    line-height: 1.6;
-    text-align:justify;
+.jobButtons{
+    justify-content: flex-end;
+    display: flex;
 }
 
 @media screen and (max-width: 1300px) {

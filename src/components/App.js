@@ -58,7 +58,7 @@ class App extends Component {
         <div>
           <MobileView>
             <div className="App">
-              <div id="left" style={{ height: this.state.height - ((this.state.height / 100) * 10) }}>
+              <div id="left" style={{ height: this.state.height }}>
                 <Overview />
               </div>
               <Experience screenHeight={this.state.height} />

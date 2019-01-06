@@ -4,12 +4,15 @@ import '@material/react-card/index.scss';
 
 import React, { Component } from 'react';
 
+import { isMobile } from "react-device-detect";
+
 import Card, {
     CardPrimaryContent,
     CardActions,
-    CardActionIcons
+    CardActionButtons
 } from "@material/react-card";
-import { isMobile } from "react-device-detect";
+
+import Button from "@material/react-button"
 
 class Detail extends Component {
 
@@ -18,7 +21,8 @@ class Detail extends Component {
             title,
             background,
             imageUrl,
-            content = []
+            content = [],
+            links = []
         } = this.props.experience
 
         let rightSectionHeight = this.props.screenHeight
@@ -37,17 +41,35 @@ class Detail extends Component {
                         {typeof imageUrl != 'undefined' ? <img alt="Example of what I created at this employer" src={imageUrl} /> : null}
                     </CardPrimaryContent>
                     <h1>{title}</h1>
-                    <ul >
-                        {content.map((value, index) => {
-                            return (<li key={index}>{value}</li>)
-                        })}
-                    </ul>
-                    <CardActions fullBleed>
-
-                        <CardActionIcons>
-                            <i>Click Me Too!</i>
-                        </CardActionIcons>
-                    </CardActions>
+                    <div>
+                        <ul >
+                            {content.map((value, index) => {
+                                return (<li key={index}>{value}</li>)
+                            })}
+                        </ul>
+                    </div>
+                    <div className="jobButtons">
+                        {
+                            links.length === 0 ? (null) :
+                                (
+                                    <CardActions fullBleed >
+                                        {
+                                            links.map((link, index) => {
+                                                return (
+                                                    <CardActionButtons key={index} >
+                                                        <Button
+                                                            href={link.url}
+                                                            target="_blank">
+                                                            {link.title}
+                                                        </Button>
+                                                    </CardActionButtons>
+                                                )
+                                            })
+                                        }
+                                    </CardActions>
+                                )
+                        }
+                    </div>
                 </Card>
             </div>
         );

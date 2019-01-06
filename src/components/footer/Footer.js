@@ -4,6 +4,8 @@ import colours from '../../Theme.scss';
 
 import React, { Component } from "react"
 
+import { isMobile } from "react-device-detect";
+
 import SocialMediaIcons from "react-social-media-icons";
 
 export const socialIcons = [
@@ -32,7 +34,7 @@ class Footer extends Component {
             <div className="Footer">
                 <SocialMediaIcons
                     icons={socialIcons}
-                    iconSize={'2em'}
+                    iconSize={isMobile ? ('1.5em') : ('2em')}
                     iconColor={colours.textColour}
                 />
             </div>
