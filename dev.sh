@@ -61,6 +61,9 @@ elif [ "$1" == "version" ] && [ "$2" != "" ]; then
 	git push --follow-tags
 	# Now deploy this change to staging
 	deploy
+elif [ "$1" == "process" ]; then
+	# Detect which process is hanging on to the port
+	netstat -vanp tcp | grep 3000
 else
     echo "You need to tell me what to do!"
 fi
