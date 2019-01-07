@@ -7,7 +7,7 @@ import React, { Component } from "react"
 import Button from "@material/react-button"
 import MaterialIcon from '@material/react-material-icon';
 
-import { isMobile } from "react-device-detect";
+import { isMobile, BrowserView, MobileView } from "react-device-detect";
 
 import { analyticsClick } from "../../analytics/GA"
 
@@ -21,10 +21,18 @@ class Overview extends Component {
                 {
                     isMobile ? (null) : (<img className="Overview-selfie" src="./images/selfie.jpeg" alt="A selfie of me" />)
                 }
-                <div className="Overview-quote">
-                    If I waited until I was ready,
-                    I would be waiting a life time.
+                <BrowserView>
+                    <div className="Overview-quote">
+                        If I waited until I was ready,<br />
+                        I would be waiting a life time.
                 </div>
+                </BrowserView>
+                <MobileView>
+                    <div className="Overview-quote">
+                        If I waited until I was ready,
+                        I would be waiting a life time.
+                </div>
+                </MobileView>
                 <p className="Overview-blurb-bold">
                     Senior developer <span role="img" aria-label="Laptop">💻</span><br />
                     Triathlete <span role="img" aria-label="Trainer">👟</span><br />

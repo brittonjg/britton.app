@@ -37,7 +37,7 @@ export const jobs = [
     {
         title: "Tictrac - Senior Android Developer",
         background: "#51B4EE",
-        imageUrl: "./images/test_pattern.svg",
+        imageUrl: "./images/work/tictrac.png",
         content: [
             "Provided leadership to a team of engineers on the multi client application",
             "Carried out user research, including face to face customer interviews, prototyping, questionnaires and calls",
@@ -76,11 +76,11 @@ export const jobs = [
         ],
         links: [
             {
-                title: "Samsung Presentation",
+                title: "Demo",
                 url: "https://www.youtube.com/watch?v=-B83RLeA_QE&feature=youtu.be&t=22m40s"
             },
             {
-                title: "InFlight",
+                title: "Article",
                 url: "supporting/mezzo-samsung.pdf"
             }
         ]
