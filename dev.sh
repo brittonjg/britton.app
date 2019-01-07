@@ -17,12 +17,10 @@ update_firebase_tools(){
 	sudo npm install -g firebase-tools	
 }
 
-deploy(){
-	echo "Deploying... "
+building(){
+	echo "Building... "
 	# Create a Production build
 	npm run build
-	# Deploy to Firebase
-	firebase deploy
 }
 
 if [ "$1" != "" ]; then
@@ -45,8 +43,12 @@ elif [ "$1" == "update" ]; then
 	npm outdated # Just to see what isn't up to date
 elif [ "$1" == "firebase-update-tools" ]; then
 	update_firebase_tools
+elif [ "$1" == "deploy" ] && [ "$2" == "beta" ]; then
+	building
+	firebase deploy --only hosting:beta
 elif [ "$1" == "deploy" ] && [ "$2" == "prod" ]; then
-	deploy
+	building
+	firebase deploy
 elif [ "$1" == "version" ] && [ "$2" != "" ]; then
 	# Update both the package json versions in turn 
 	cd functions
@@ -60,7 +62,8 @@ elif [ "$1" == "version" ] && [ "$2" != "" ]; then
 	git tag -a "v$2" -m "Tag v$2"
 	git push --follow-tags
 	# Now deploy this change to staging
-	deploy
+	building
+	firebase deploy
 elif [ "$1" == "process" ]; then
 	# Detect which process is hanging on to the port
 	netstat -vanp tcp | grep 3000
