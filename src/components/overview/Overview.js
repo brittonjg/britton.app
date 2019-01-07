@@ -22,16 +22,16 @@ class Overview extends Component {
                     isMobile ? (null) : (<img className="Overview-selfie" src="./images/selfie.jpeg" alt="A selfie of me" />)
                 }
                 <BrowserView>
-                    <div className="Overview-quote">
+                    <div className="Overview-quote" >
                         If I waited until I was ready,<br />
                         I would be waiting a life time.
-                </div>
+                    </div>
                 </BrowserView>
                 <MobileView>
-                    <div className="Overview-quote">
+                    <div className="Overview-quote" >
                         If I waited until I was ready,
                         I would be waiting a life time.
-                </div>
+                    </div>
                 </MobileView>
                 <p className="Overview-blurb-bold">
                     Senior developer <span role="img" aria-label="Laptop">💻</span><br />

@@ -1,7 +1,8 @@
 
 export const jobs = [
     {
-        title: "EYN - Head of Mobile",
+        title: "EYN",
+        subtitle: "Building a new generation of identity solutions for staffing agencies",
         background: "#05294B",
         imageUrl: "./images/work/eyn.jpg",
         content: [
@@ -35,7 +36,8 @@ export const jobs = [
     //     ]
     // },
     {
-        title: "Tictrac - Senior Android Developer",
+        title: "Tictrac",
+        subtitle: "Wellness platform designed to generate lasting engagement and empower people to live healthier lives",
         background: "#51B4EE",
         imageUrl: "./images/work/tictrac.png",
         content: [
@@ -53,7 +55,8 @@ export const jobs = [
         ]
     },
     {
-        title: "Fanatix - Android Developer",
+        title: "Fanatix",
+        subtitle: "Fan powered sports micro video highlights news service from current sports events",
         background: "#EB6F2E",
         imageUrl: "./images/work/fanatix.png",
         content: [
@@ -63,7 +66,8 @@ export const jobs = [
         ]
     },
     {
-        title: "Mezzo - R&D Android Developer",
+        title: "Mezzo",
+        subtitle: "Revolutionising In Flight Entertainment with Samsung consumer devices",
         background: "#461063",
         imageUrl: "./images/work/mezzo.jpeg",
         content: [

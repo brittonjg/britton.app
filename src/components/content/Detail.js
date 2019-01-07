@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 import { isMobile } from "react-device-detect";
 
 import Card, {
-    CardPrimaryContent,
     CardActions,
     CardActionButtons
 } from "@material/react-card";
@@ -19,6 +18,7 @@ class Detail extends Component {
     render() {
         const {
             title,
+            subtitle,
             background,
             imageUrl,
             content = [],
@@ -37,10 +37,9 @@ class Detail extends Component {
                 background: background
             }}>
                 <Card className="jobCard" outlined>
-                    <CardPrimaryContent>
-                        {typeof imageUrl != 'undefined' ? <img alt="Example of what I created at this employer" src={imageUrl} /> : null}
-                    </CardPrimaryContent>
-                    <h1>{title}</h1>
+                    {typeof imageUrl != 'undefined' ? <img alt="Example of what I created at this employer" src={imageUrl} /> : null}
+                    <div className="jobTitle">{title}</div>
+                    <div className="jobSubtitle">{subtitle}</div>
                     <div>
                         <ul >
                             {content.map((value, index) => {

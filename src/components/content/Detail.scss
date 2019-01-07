@@ -13,34 +13,43 @@
 .jobCard{
     max-height: 800px;
     width: 600px;
-}
-
-.jobCard CardPrimaryContent{
+    line-height: 1.5;
     background: $bg-colour;
 }
 
-.jobCard h1{
-    height: 5px;
-    margin-top: 5px;
-    padding-left: 10px;
+.jobTitle{
+    height: auto;
+    padding-left: 5px;
+    padding-right: 5px;
     font-weight: 500;
     text-align:center;
     width: auto;
-    line-height: 1.6;
     color: $text-colour;
+    font-size: calc(12px + 2.5vmin);
+}
+
+.jobSubtitle{
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 400;
+    text-align:center;
+    width: auto;
+    color: $text-colour;
+    line-height: 1.2;
+    font-size: calc(6px + 1.5vmin);
 }
 
 .jobCard img{
     object-fit: contain;
     height: 400px;
-    width: 100%;
+    width: 600px;
 }
 
 .jobCard ul{
-    padding-top: 10px;
+    height: auto;
     font-weight: 300;
     font-size: calc(6px + 1vmin);
-    line-height: 1.6;
     list-style-type: circle;
 }
 
@@ -48,7 +57,6 @@
     padding-right: 10px;
     font-weight: 300;
     font-size: calc(6px + 1vmin);
-    line-height: 1.6;
     text-align:left;
 }
 
@@ -65,6 +73,17 @@
 
 @media screen and (max-height: 700px){
     .jobCard img{
+        object-fit: contain;
         height: 200px;
+        width: 350px;
+    }
+
+    .jobSubtitle{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .jobCard li{
+        font-size: calc(8px + 1vmin);
     }
 }
