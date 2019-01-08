@@ -43,7 +43,10 @@ class Overview extends Component {
                     developing a facial indentity solution
                 </p>
                 <div className="buttons">
-                    <Button raised={true} href="mailto:james@britton.app">
+                    <Button
+                        raised={true}
+                        onClick={() => analyticsClick("Message Me")}
+                        href="mailto:james@britton.app">
                         Message Me
                     </Button>
                     <div className="buttons-horizontal">
