@@ -1,8 +1,8 @@
-import "./Detail.scss"
+import "./Detail.scss";
 
-import '@material/react-card/index.scss';
+import "@material/react-card/index.scss";
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import { isMobile } from "react-device-detect";
 
@@ -11,7 +11,7 @@ import Card, {
     CardActionButtons
 } from "@material/react-card";
 
-import Button from "@material/react-button"
+import Button from "@material/react-button";
 
 class Detail extends Component {
 
@@ -34,7 +34,7 @@ class Detail extends Component {
         return (
             <div className="jobWrapper" style={{
                 height: rightSectionHeight,
-                background: background
+                background
             }}>
                 <Card className="jobCard" outlined>
                     {typeof imageUrl != 'undefined' ? <img alt="Example of what I created at this employer" src={imageUrl} /> : null}
@@ -43,7 +43,7 @@ class Detail extends Component {
                     <div>
                         <ul >
                             {content.map((value, index) => {
-                                return (<li key={index}>{value}</li>)
+                                return (<li key={index}>{value}</li>);
                             })}
                         </ul>
                     </div>
@@ -62,7 +62,7 @@ class Detail extends Component {
                                                             {link.title}
                                                         </Button>
                                                     </CardActionButtons>
-                                                )
+                                                );
                                             })
                                         }
                                     </CardActions>

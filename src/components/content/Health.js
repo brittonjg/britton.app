@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Iframe from 'react-iframe'
+import Iframe from "react-iframe";
 
 const fullHeight = {
-    height: '100%',
-    border: '0px',
-    margin: '0px',
+    height: "100%",
+    border: "0px",
+    margin: "0px",
 };
 
 class Health extends Component {

@@ -1,8 +1,8 @@
-import "./Footer.scss"
+import "./Footer.scss";
 
-import colours from '../../Theme.scss';
+import colours from "../../Theme.scss";
 
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 import { isMobile } from "react-device-detect";
 
@@ -34,7 +34,7 @@ class Footer extends Component {
             <div className="Footer">
                 <SocialMediaIcons
                     icons={socialIcons}
-                    iconSize={isMobile ? ('1.5em') : ('2em')}
+                    iconSize={isMobile ? ("1.5em") : ("2em")}
                     iconColor={colours.textColour}
                 />
             </div>

@@ -1,17 +1,17 @@
-import "./Overview.scss"
+import "./Overview.scss";
 
-import "@material/react-button/index.scss"
+import "@material/react-button/index.scss";
 
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Button from "@material/react-button"
-import MaterialIcon from '@material/react-material-icon';
+import Button from "@material/react-button";
+import MaterialIcon from "@material/react-material-icon";
 
 import { isMobile, BrowserView, MobileView } from "react-device-detect";
 
-import { analyticsClick } from "../../analytics/GA"
+import { analyticsClick } from "../../analytics/GA";
 
-import Footer from "../footer/Footer"
+import Footer from "../footer/Footer";
 
 class Overview extends Component {
 

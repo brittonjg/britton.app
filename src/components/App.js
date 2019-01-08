@@ -1,23 +1,22 @@
-import "./App.scss"
+import "./App.scss";
 
-import React, { Component } from "react"
+import React, { Component } from "react";
 import {
   BrowserRouter as Router
-} from "react-router-dom"
+} from "react-router-dom";
 
 import { isMobile, MobileView, BrowserView } from "react-device-detect";
 
 import {
   initGoogleAnalytics,
   trackPage
-} from "../analytics/GA"
+} from "../analytics/GA";
 
-import Overview from "./overview/Overview"
-
-import Experience from "./content/Experience"
+import Overview from "./overview/Overview";
+import Experience from "./content/Experience";
 
 // Initialise the Goolge Analyiics tracking
-initGoogleAnalytics()
+initGoogleAnalytics();
 
 class App extends Component {
 
