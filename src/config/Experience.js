@@ -4,7 +4,7 @@ export const jobs = [
         title: "EYN",
         subtitle: "Building a new generation of identity solutions for staffing agencies",
         background: "#05294B",
-        imageUrl: "./images/work/eyn.jpg",
+        imageUrl: "./images/work/eyn.png",
         content: [
             "Responsible for designing, engineering and maintaining front end services.Includes Android app, Web application and Restful API services",
             "Facilitated team meetings and implemented agile principles to improve team efficiency and organisation",
@@ -69,7 +69,7 @@ export const jobs = [
         title: "Mezzo",
         subtitle: "Revolutionising In Flight Entertainment with Samsung consumer devices",
         background: "#461063",
-        imageUrl: "./images/work/mezzo.jpeg",
+        imageUrl: "./images/work/mezzo.png",
         content: [
             "Lead developer on Android customer projects",
             "Full stack development; including mobile application, local and cloud implemented servers",

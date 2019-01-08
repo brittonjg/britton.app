@@ -19,7 +19,7 @@ class Overview extends Component {
         return (
             <div className="Overview" style={{ height: this.props.screenHeight }}>
                 {
-                    isMobile ? (null) : (<img className="Overview-selfie" src="./images/selfie.jpeg" alt="A selfie of me" />)
+                    isMobile ? (null) : (<img className="Overview-selfie" src="./images/selfie.png" alt="A selfie of me" />)
                 }
                 <BrowserView>
                     <div className="Overview-quote" >
