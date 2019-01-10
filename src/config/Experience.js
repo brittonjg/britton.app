@@ -18,8 +18,8 @@ export const jobs = [
                 url: "https://play.google.com/store/apps/details?id=vision.eyn.android.righttowork"
             },
             {
-                title: "Self Service",
-                url: "https://youtu.be/HtCYi6sm-Gw"
+                title: "Homepage",
+                url: "https://www.eyn.vision/invitation?key=hsdjodjg"
             }
         ]
     },
@@ -51,6 +51,10 @@ export const jobs = [
             {
                 title: "Aviva Launch",
                 url: "https://www.covermagazine.co.uk/cover/news/3010122/aviva-set-to-launch-personalised-wellbeing-app"
+            },
+            {
+                title: "Homepage",
+                url: "https://tictrac.com/"
             }
         ]
     },

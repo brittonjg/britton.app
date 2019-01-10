@@ -57,6 +57,8 @@ class Detail extends Component {
                                                 return (
                                                     <CardActionButtons key={index} >
                                                         <Button
+                                                            style={{ margin: "5px" }}
+                                                            dense={true}
                                                             href={link.url}
                                                             target="_blank">
                                                             {link.title}
