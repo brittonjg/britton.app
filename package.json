@@ -1,6 +1,6 @@
 {
   "name": "britton_app",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material/react-button": "^0.8.0",
