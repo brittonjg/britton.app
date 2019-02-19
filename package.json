@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material/react-button": "^0.8.0",
-    "@material/react-card": "^0.8.0",
+    "@material/react-card": "^0.10.0",
     "@material/react-material-icon": "^0.8.0",
     "@material/shape": "^0.43.0",
     "@material/theme": "^0.43.0",
