@@ -1,6 +1,6 @@
 import "./Overview.scss";
 
-import "@material/react-button/index.scss";
+import '@material/react-button/dist/button.css';
 
 import React, { Component } from "react";
 
