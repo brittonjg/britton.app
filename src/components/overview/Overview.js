@@ -34,13 +34,13 @@ class Overview extends Component {
                     </div>
                 </MobileView>
                 <p className="Overview-blurb-bold">
-                    Senior developer <span role="img" aria-label="Laptop">💻</span><br />
+                    Tech Lead <span role="img" aria-label="Laptop">💻</span><br />
                     Triathlete <span role="img" aria-label="Trainer">👟</span><br />
                     Emojiuser <span role="img" aria-label="Strong">💪</span>
                 </p>
                 <p className="Overview-blurb">
-                    Experienced software developer, specialising in Android and web technologies. Currently Mobile Lead at <a href="https://www.linkedin.com/company/eyn-limited/" target="_blank" rel="noopener noreferrer">EYN </a>
-                    developing a facial indentity solution
+                    Experienced software developer, specialising in Android and web technologies. Currently Tech Lead at <a href="https://monterosa.co" target="_blank" rel="noopener noreferrer">Monterosa </a>
+                    as part of the Client Solutions team. Currently leading teams across a wide range of native application solutions.
                 </p>
                 <div className="buttons">
                     <Button raised={true} href="mailto:james@britton.app">
