@@ -55,6 +55,14 @@ class Overview extends Component {
                             onClick={() => analyticsClick("Download CV")}>
                             Resumé
                         </Button>
+                        <Button
+                            outlined={true}
+                            icon={<MaterialIcon icon='favorite' />}
+                            href="http://health.britton.app"
+                            target="_blank"
+                            onClick={() => analyticsClick("Health")}>
+                            Health
+                        </Button>
                     </div>
                 </div>
                 <Footer />
