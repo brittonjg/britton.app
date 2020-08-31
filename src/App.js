@@ -10,10 +10,10 @@ import { isMobile, MobileView, BrowserView } from "react-device-detect";
 import {
   initGoogleAnalytics,
   trackPage
-} from "../analytics/GA";
+} from "./analytics/GA";
 
-import Overview from "./overview/Overview";
-import Experience from "./content/Experience";
+import Overview from "./components/overview/Overview";
+import Experience from "./components/content/Experience";
 
 // Initialise the Goolge Analyiics tracking
 initGoogleAnalytics();

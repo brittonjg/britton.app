@@ -1,6 +1,6 @@
 import "./Detail.scss";
 
-import "@material/react-card/index.scss";
+import '@material/react-card/dist/card.css';
 
 import React, { Component } from "react";
 
