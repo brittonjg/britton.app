@@ -44,7 +44,7 @@ class Overview extends Component {
                     as part of the Client Solutions team. Currently leading teams across a wide range of native application solutions.
                 </p>
                 <div className="buttons">
-                    <Button raised={true} href="mailto:james@britton.app">
+                    <Button raised={true} href="mailto:britton@hey.com">
                         Message Me
                     </Button>
                     <div className="buttons-horizontal">
