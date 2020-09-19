@@ -1,6 +1,24 @@
 
 export const jobs = [
     {
+        title: "Monterosa",
+        subtitle: "Creating a leading Audience Interaction Platform for Entertainment and Sports shows",
+        background: "#9225B6",
+        imageUrl: "./images/work/monterosa.png",
+        content: [
+        ],
+        links: [
+            {
+                title: "Demo App",
+                url: "https://play.google.com/store/apps/details?id=vision.eyn.android.righttowork"
+            },
+            {
+                title: "Homepage",
+                url: "https://www.eyn.vision/invitation?key=hsdjodjg"
+            }
+        ]
+    },
+    {
         title: "EYN",
         subtitle: "Building a new generation of identity solutions for staffing agencies",
         background: "#05294B",

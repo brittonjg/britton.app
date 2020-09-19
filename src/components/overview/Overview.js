@@ -36,7 +36,7 @@ class Overview extends Component {
                 <p className="Overview-blurb-bold">
                     Tech Lead <span role="img" aria-label="Laptop">💻</span><br />
                     Triathlete <span role="img" aria-label="Trainer">👟</span><br />
-                    Furdad <span role="img" aria-label="Dog">🐶</span><br />
+                    <a href="https://www.instagram.com/torryn_toller" target="_blank" rel="noopener noreferrer">Furdad</a> <span role="img" aria-label="Dog">🐶</span><br />
                     Emojiuser <span role="img" aria-label="Strong">💪</span>
                 </p>
                 <p className="Overview-blurb">
