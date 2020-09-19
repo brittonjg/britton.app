@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@material/react-button": "^0.15.0",
-    "@material/react-card": "^0.15.0",
-    "@material/react-material-icon": "^0.15.0",
-    "@material/react-ripple": "^0.15.0",
+    "@material/button": "^7.0.0",
+    "@material/card": "^7.0.0",
+    "@material/icon-button": "^7.0.0",
+    "@material/ripple": "^7.0.0",
     "@material/shape": "^7.0.0",
     "@material/theme": "^7.0.0",
+    "@material/typography": "^7.0.0",
     "react": "^16.13.1",
     "react-device-detect": "^1.12.1",
     "react-dom": "^16.13.1",
@@ -18,7 +19,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.3",
     "react-social-media-icons": "^1.1.0",
-    "sass": "^1.26.10"
+    "sass": "^1.26.11"
   },
   "scripts": {
     "start": "react-scripts start",
