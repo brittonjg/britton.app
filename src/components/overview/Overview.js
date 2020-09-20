@@ -33,7 +33,6 @@ class Overview extends Component {
                     </div>
                 </MobileView>
                 <p className="Overview-blurb-bold">
-                    Tech Lead <span role="img" aria-label="Laptop">💻</span><br />
                     Triathlete <span role="img" aria-label="Trainer">👟</span><br />
                     <a href="https://www.instagram.com/torryn_toller" target="_blank" rel="noopener noreferrer">Furdad</a> <span role="img" aria-label="Dog">🐶</span><br />
                     Emojiuser <span role="img" aria-label="Strong">💪</span>
@@ -43,9 +42,6 @@ class Overview extends Component {
                     as part of the Client Solutions team. Currently leading teams across a wide range of native application solutions.
                 </p>
                 <div className="buttons">
-                    <Button raised={true} href="mailto:britton@hey.com">
-                        Message Me
-                    </Button>
                     <div className="buttons-horizontal">
                         <Button
                             outlined={true}
@@ -53,6 +49,9 @@ class Overview extends Component {
                             target="_blank"
                             onClick={() => analyticsClick("Download CV")}>
                             Resumé
+                        </Button>
+                        <Button raised={true} href="mailto:britton@hey.com">
+                            Message Me
                         </Button>
                         <Button
                             outlined={true}
