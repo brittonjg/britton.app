@@ -5,7 +5,6 @@ import '@material/react-button/dist/button.css';
 import React, { Component } from "react";
 
 import Button from "@material/react-button";
-import MaterialIcon from "@material/react-material-icon";
 
 import { isMobile, BrowserView, MobileView } from "react-device-detect";
 
@@ -50,7 +49,6 @@ class Overview extends Component {
                     <div className="buttons-horizontal">
                         <Button
                             outlined={true}
-                            icon={<MaterialIcon icon='cloud_download' />}
                             href="./resume.pdf"
                             target="_blank"
                             onClick={() => analyticsClick("Download CV")}>
@@ -58,7 +56,6 @@ class Overview extends Component {
                         </Button>
                         <Button
                             outlined={true}
-                            icon={<MaterialIcon icon='favorite' />}
                             href="http://health.britton.app"
                             target="_blank"
                             onClick={() => analyticsClick("Health")}>

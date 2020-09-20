@@ -6,6 +6,8 @@
     "@material/button": "^7.0.0",
     "@material/card": "^7.0.0",
     "@material/icon-button": "^7.0.0",
+    "@material/react-button": "^0.15.0",
+    "@material/react-card": "^0.15.0",
     "@material/ripple": "^7.0.0",
     "@material/shape": "^7.0.0",
     "@material/theme": "^7.0.0",

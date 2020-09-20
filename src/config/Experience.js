@@ -9,12 +9,8 @@ export const jobs = [
         ],
         links: [
             {
-                title: "Demo App",
-                url: "https://play.google.com/store/apps/details?id=vision.eyn.android.righttowork"
-            },
-            {
                 title: "Homepage",
-                url: "https://www.eyn.vision/invitation?key=hsdjodjg"
+                url: "https://www.monterosa.io"
             }
         ]
     },
