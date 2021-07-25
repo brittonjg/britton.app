@@ -5,13 +5,13 @@
 # As this is a simple script, exit if we come accross a failure
 set -e
 
-update_firebase () {
-	cd functions
-	npm install firebase-functions@latest --save
-	npm install firebase-functions@latest firebase-admin@latest --save
-	npm outdated # Just to see what isn't up to date
-	cd ../
-}
+# update_firebase () {
+# 	cd functions
+# 	npm install firebase-functions@latest --save
+# 	npm install firebase-functions@latest firebase-admin@latest --save
+# 	npm outdated # Just to see what isn't up to date
+# 	cd ../
+# }
 
 update_firebase_tools(){
 	sudo npm install -g firebase-tools	
@@ -20,7 +20,7 @@ update_firebase_tools(){
 building(){
 	echo "Building... "
 	# Create a Production build
-	npm run build
+	flutter build web
 }
 
 if [ "$1" != "" ]; then
@@ -29,7 +29,7 @@ fi
 
 if [ "$1" == "firebase" ]; then
     # Start Firebase dev
-	update_firebase
+	# update_firebase
 	firebase serve
 elif [ "$1" == "functions" ]; then
 	# Start only Firebase Functions
@@ -39,7 +39,7 @@ elif [ "$1" == "run" ]; then
 	npm start 
 elif [ "$1" == "update" ]; then
 	npm update
-	update_firebase
+	# update_firebase
 	npm outdated # Just to see what isn't up to date
 elif [ "$1" == "firebase-update-tools" ]; then
 	update_firebase_tools
