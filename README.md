@@ -1,6 +1,6 @@
-# personalwebsitev2
+# Personal Website
 
-A new Flutter project.
+Peronsal bio, currently mainly for recruitment
 
 ## Getting Started
 

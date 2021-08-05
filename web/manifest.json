@@ -1,6 +1,6 @@
 {
-    "name": "personalwebsitev2",
-    "short_name": "personalwebsitev2",
+    "name": "britton.app",
+    "short_name": "Bio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
