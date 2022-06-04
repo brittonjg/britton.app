@@ -36,7 +36,7 @@ elif [ "$1" == "functions" ]; then
 	firebase serve --only functions
 elif [ "$1" == "run" ]; then
 	# Start Dev Server
-	npm start 
+	flutter run -d chrome 
 elif [ "$1" == "update" ]; then
 	npm update
 	# update_firebase
