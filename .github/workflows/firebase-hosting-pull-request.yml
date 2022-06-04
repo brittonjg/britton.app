@@ -23,4 +23,4 @@ jobs:
           channelId: 'stable'
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_F669A }}'
-          projectId: beta-personal
+          projectId: personal-f669a

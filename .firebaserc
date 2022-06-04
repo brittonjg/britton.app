@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "personal-f669a"
+  },
+  "targets": {
+    "personal-f669a": {
+      "hosting": {
+        "beta": [
+          "beta-personal"
+        ]
+      }
+    }
+  }
+}
