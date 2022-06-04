@@ -35,6 +35,10 @@ elif [ "$1" == "functions" ]; then
 	# Start only Firebase Functions
 	firebase serve --only functions
 elif [ "$1" == "run" ]; then
+	# Format the code
+	flutter format
+	# Analyse the code
+	flutter analyze
 	# Start Dev Server
 	flutter run -d chrome 
 elif [ "$1" == "update" ]; then
