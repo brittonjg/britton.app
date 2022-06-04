@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
+const double PADDING = 6.0;
+const double FONT_HEIGHT = 1.6;
 
 void main() {
   runApp(MyApp());
@@ -76,56 +80,75 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Text createSubTitle(text) {
+  AutoSizeText createSubTitle(text, maxNumLines) {
     final TextStyle subTitle = TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         fontStyle: FontStyle.normal,
-        height: 1.4,
+        height: FONT_HEIGHT,
         color: TEXT_COLOUR);
 
-    return Text(
+    return AutoSizeText(
       text,
       style: subTitle,
+      maxLines: maxNumLines,
+      minFontSize: 12,
       textAlign: TextAlign.center,
+      overflow: TextOverflow.visible,
     );
+  }
+
+  AutoSizeText createMainText(String text, int maxLineNum) {
+    final TextStyle mainText = TextStyle(
+        fontSize: 16,
+        height: FONT_HEIGHT,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal,
+        color: TEXT_COLOUR);
+
+    return AutoSizeText(
+      text,
+      style: mainText,
+      maxLines: maxLineNum,
+      minFontSize: 8,
+      textAlign: TextAlign.center,
+      overflow: TextOverflow.visible,
+    );
+  }
+
+  Widget socialContainer() {
+    return Padding(
+        padding: EdgeInsets.all(PADDING),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: socialIcons(),
+        ));
+  }
+
+  IconButton createIcon(IconData iconImage, String url) {
+    return IconButton(
+        icon: FaIcon(iconImage),
+        color: TEXT_COLOUR,
+        onPressed: () => setState(() {
+              launched = launchInBrowser(url);
+            }));
   }
 
   List<Widget> socialIcons() {
     return [
-      IconButton(
-          icon: FaIcon(FontAwesomeIcons.linkedin),
-          color: TEXT_COLOUR,
-          onPressed: () => setState(() {
-                launched = launchInBrowser(URL_LINKEDIN);
-              })),
-      IconButton(
-          icon: FaIcon(FontAwesomeIcons.github),
-          color: TEXT_COLOUR,
-          onPressed: () => setState(() {
-                launched = launchInBrowser(URL_GITHUB);
-              })),
-      IconButton(
-          icon: FaIcon(FontAwesomeIcons.instagram),
-          color: TEXT_COLOUR,
-          onPressed: () => setState(() {
-                launched = launchInBrowser(URL_INSTA_ME);
-              })),
-      IconButton(
-          icon: FaIcon(FontAwesomeIcons.lastfm),
-          color: TEXT_COLOUR,
-          onPressed: () => setState(() {
-                launched = launchInBrowser(URL_LASTFM);
-              }))
+      createIcon(FontAwesomeIcons.linkedin, URL_LINKEDIN),
+      createIcon(FontAwesomeIcons.github, URL_GITHUB),
+      createIcon(FontAwesomeIcons.instagram, URL_INSTA_ME),
+      createIcon(FontAwesomeIcons.lastfm, URL_LASTFM),
     ];
   }
 
   Widget mainContents() {
-    const double PADDING = 8.0;
+    
 
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(PADDING),
         child: Image(
           image: AssetImage('assets/images/selfie.png'),
           height: 200,
@@ -137,42 +160,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            FittedBox(
-                fit: BoxFit.fitWidth,
-                child: createSubTitle('Engineering Manager 🧑‍💻')),
-            FittedBox(
-                fit: BoxFit.fitWidth,
-                child: createSubTitle('Triathlete 🏊🚴🏃')),
-            FittedBox(
-                fit: BoxFit.fitWidth,
-                // child: TextButton(
-                // onPressed: () => setState(() {
-                // launched = launchInBrowser(URL_INSTA_TORRYN);
-                // }),
-                child: createSubTitle('Furdad 🐶')
-                // ),
-                ),
-            FittedBox(
-                fit: BoxFit.fitWidth, child: createSubTitle('Emojiuser 💪'))
+            createSubTitle('Engineering Manager 🧑‍💻', 2),
+            createSubTitle('Triathlete 🏊🚴🏃', 1)
           ],
         ),
       ),
       Padding(
           padding: EdgeInsets.all(PADDING),
-          child: Text(
-            'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications.\n Currently an Engineering Manager at Cuvva for the Growth team.',
-            style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w100,
-                fontStyle: FontStyle.normal,
-                height: 1.4),
-            textAlign: TextAlign.center,
-          )),
-      Padding(
-          padding: EdgeInsets.all(PADDING),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: socialIcons(),
+          child: Column(
+            children: [
+              createMainText(
+                  'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications.',
+                  4),
+              createMainText('', 1), // Space between text
+              createMainText(
+                  'Currently an Engineering Manager at Cuvva for the Growth team.',
+                  2)
+            ],
           )),
     ]);
   }
@@ -212,12 +216,22 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Container(),
             ),
             Expanded(
-                flex: 8,
+                flex: 9,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Expanded(flex: 9, child: mainContents()),
-                    Expanded(flex: 1, child: Container())
+                    Expanded(flex: 7, child: mainContents()),
+                    Expanded(
+                      child: TextButton(
+                          onPressed: () => setState(() {
+                                launched = launchInBrowser(URL_INSTA_TORRYN);
+                              }),
+                          child: createSubTitle('Torryn 🐶', 1)),
+                    ),
+                    Expanded(flex: 1, child: socialContainer()),
+                    Expanded(
+                        flex: 1,
+                        child: Container()), // Space to allow for the FAB
                   ],
                 )),
             Expanded(
@@ -232,7 +246,14 @@ class _MyHomePageState extends State<MyHomePage> {
           launched = launchInBrowser(URL_RESUME);
         }),
         tooltip: 'Download Resumé',
-        label: Text('Resumé'),
+        label: Text(
+          'Resumé',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            fontStyle: FontStyle.normal,
+          ),
+        ),
         icon: Icon(Icons.download),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
