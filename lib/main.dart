@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
       text,
       style: mainText,
       maxLines: maxLineNum,
-      minFontSize: 8,
+      minFontSize: 10,
       textAlign: TextAlign.center,
       overflow: TextOverflow.visible,
     );
@@ -144,8 +144,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget mainContents() {
-    
-
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Padding(
         padding: EdgeInsets.all(PADDING),
@@ -170,12 +168,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               createMainText(
-                  'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications.',
-                  4),
+                  'Currently an Engineering Manager at Cuvva for the Growth team.',
+                  2),
               createMainText('', 1), // Space between text
               createMainText(
-                  'Currently an Engineering Manager at Cuvva for the Growth team.',
-                  2)
+                  'A mobile engineer for 9+ years, now leading and coaching teams to develop, deploy and maintain high quality applications across mobile, web and backend.',
+                  4)
             ],
           )),
     ]);
