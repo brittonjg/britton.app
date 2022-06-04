@@ -7,6 +7,9 @@
       "hosting": {
         "beta": [
           "beta-personal"
+        ],
+        "prod": [
+          "personal-f669a"
         ]
       }
     }
