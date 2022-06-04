@@ -160,7 +160,8 @@ class _MyHomePageState extends State<MyHomePage> {
       Padding(
           padding: EdgeInsets.all(PADDING),
           child: Text(
-            'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications. Currently Tech Lead at Monterosa as part of the Client Solutions team.',
+            'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications.\n
+            Currently an Engineering Manager at Cuvva for the Growth team.',
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w100,
@@ -231,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () => setState(() {
           launched = launchInBrowser(URL_RESUME);
         }),
-        tooltip: 'Increment',
+        tooltip: 'Download Resumé',
         label: Text('Resumé'),
         icon: Icon(Icons.download),
       ), // This trailing comma makes auto-formatting nicer for build methods.
