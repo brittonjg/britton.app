@@ -160,8 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Padding(
           padding: EdgeInsets.all(PADDING),
           child: Text(
-            'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications.\n
-            Currently an Engineering Manager at Cuvva for the Growth team.',
+            'A mobile engineer for 9+ years, now leading and developing teams to develop, deploy and maintain high quality applications.\n Currently an Engineering Manager at Cuvva for the Growth team.',
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w100,
