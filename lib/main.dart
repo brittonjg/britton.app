@@ -1,9 +1,13 @@
+import 'package:britton_app/contants.dart';
+import 'package:britton_app/ui/download_resume.dart';
+import 'package:britton_app/work_experience.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
 
 const double PADDING = 6.0;
 const double FONT_HEIGHT = 1.6;
@@ -57,15 +61,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static const URL_RESUME =
-      'https://drive.google.com/file/d/1XEjVwmp4MIyX0mQTD72hMKk1WmrTArZm/view?usp=sharing';
-  static const URL_INSTA_TORRYN = 'https://www.instagram.com/torryn_toller';
-  static const URL_INSTA_ME = 'https://www.instagram.com/britton.jg/';
-  static const URL_LINKEDIN = 'https://www.linkedin.com/in/jgbritton/';
-  static const URL_GITHUB = 'https://github.com/brittonjg';
-  static const URL_LASTFM = 'https://www.last.fm/user/mcdillon';
-
-  static const TEXT_COLOUR = Color.fromRGBO(55, 71, 79, 1);
 
   Future<void>? launched;
 
@@ -144,6 +139,14 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
   }
 
+  List<Widget> getMainLayout() {
+    return <Widget>[
+      Expanded(flex: 7, child: mainContents()),
+      Expanded(child: torrynLayout()),
+      Expanded(flex: 1, child: socialContainer()),
+    ];
+  }
+
   Widget mainContents() {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Padding(
@@ -188,122 +191,52 @@ class _MyHomePageState extends State<MyHomePage> {
         child: createSubTitle('Torryn 🐶', 1));
   }
 
-  FloatingActionButton fabLayout() {
-    return FloatingActionButton.extended(
-      onPressed: () => setState(() {
-        launched = launchInBrowser(URL_RESUME);
-      }),
-      tooltip: 'Download Resumé',
-      label: Text(
-        'Resumé',
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          fontStyle: FontStyle.normal,
-        ),
-      ),
-      icon: Icon(Icons.download),
-    );
+  DownloadResume fabResume() {
+    return DownloadResume(() => {launched = launchInBrowser(URL_RESUME)});
   }
 
   getTabletLayout() {
     return Scaffold(
-        body: Center(
+        body: Container(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: Row(
-            // Column is also a layout widget. It takes a list of children and
-            // arranges them vertically. By default, it sizes itself to fit its
-            // children horizontally, and tries to be as tall as its parent.
-            //
-            // Invoke "debug painting" (press "p" in the console, choose the
-            // "Toggle Debug Paint" action from the Flutter Inspector in Android
-            // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-            // to see the wireframe for each widget.
-            //
-            // Column has various properties to control how it sizes itself and
-            // how it positions its children. Here we use mainAxisAlignment to
-            // center the children vertically; the main axis here is the vertical
-            // axis because Columns are vertical (the cross axis would be
-            // horizontal).
 
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Container(),
-              ),
-              Expanded(
-                  flex: 9,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Expanded(flex: 7, child: mainContents()),
-                      Expanded(child: torrynLayout()),
-                      Expanded(flex: 1, child: socialContainer()),
-                    ],
-                  )),
-              Expanded(
-                flex: 1,
-                child: Container(),
-              ),
-            ],
-          ),
+          child: Row(children: <Widget>[
+            Expanded(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                    flex: 4,
+                    child: Padding(
+                        padding: EdgeInsets.all(PADDING),
+                        child: mainContents())),
+                Expanded(child: torrynLayout()),
+                Expanded(child: socialContainer()),
+              ],
+            )),
+            Expanded(child: WorkExperience())
+          ]),
         ),
-        floatingActionButton:
-            fabLayout() // This trailing comma makes auto-formatting nicer for build methods.
+        floatingActionButton: fabResume()
         );
   }
 
   getMobileLayout() {
     return Scaffold(
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Row(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Container(),
-            ),
-            Expanded(
-                flex: 9,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Expanded(flex: 7, child: mainContents()),
-                    Expanded(child: torrynLayout()),
-                    Expanded(flex: 1, child: socialContainer()),
-                    Expanded(
-                        flex: 1,
-                        child: Container()), // Space to allow for the FAB
-                  ],
-                )),
-            Expanded(
-              flex: 1,
-              child: Container(),
-            ),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(flex: 7, child: mainContents()),
+              Expanded(child: torrynLayout()),
+              Expanded(flex: 1, child: socialContainer()),
+              WorkExperience(),
           ],
         ),
       ),
-      floatingActionButton:
-          fabLayout(), // This trailing comma makes auto-formatting nicer for build methods.
+        floatingActionButton: fabResume()
     );
   }
 
@@ -321,9 +254,10 @@ class _MyHomePageState extends State<MyHomePage> {
       // Check the sizing information here and return your UI
       if (sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
           sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+        // Show our table layout
         return getTabletLayout();
       }
-
+      // Let's assume it's a mobile device
       return getMobileLayout();
     });
   }
