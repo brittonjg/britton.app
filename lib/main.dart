@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 const double PADDING = 6.0;
 const double FONT_HEIGHT = 1.6;
@@ -179,14 +180,82 @@ class _MyHomePageState extends State<MyHomePage> {
     ]);
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+  torrynLayout() {
+    return TextButton(
+        onPressed: () => setState(() {
+              launched = launchInBrowser(URL_INSTA_TORRYN);
+            }),
+        child: createSubTitle('Torryn 🐶', 1));
+  }
+
+  FloatingActionButton fabLayout() {
+    return FloatingActionButton.extended(
+      onPressed: () => setState(() {
+        launched = launchInBrowser(URL_RESUME);
+      }),
+      tooltip: 'Download Resumé',
+      label: Text(
+        'Resumé',
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          fontStyle: FontStyle.normal,
+        ),
+      ),
+      icon: Icon(Icons.download),
+    );
+  }
+
+  getTabletLayout() {
+    return Scaffold(
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Row(
+            // Column is also a layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //
+            // Invoke "debug painting" (press "p" in the console, choose the
+            // "Toggle Debug Paint" action from the Flutter Inspector in Android
+            // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+            // to see the wireframe for each widget.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
+
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: Container(),
+              ),
+              Expanded(
+                  flex: 9,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Expanded(flex: 7, child: mainContents()),
+                      Expanded(child: torrynLayout()),
+                      Expanded(flex: 1, child: socialContainer()),
+                    ],
+                  )),
+              Expanded(
+                flex: 1,
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton:
+            fabLayout() // This trailing comma makes auto-formatting nicer for build methods.
+        );
+  }
+
+  getMobileLayout() {
     return Scaffold(
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -219,13 +288,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Expanded(flex: 7, child: mainContents()),
-                    Expanded(
-                      child: TextButton(
-                          onPressed: () => setState(() {
-                                launched = launchInBrowser(URL_INSTA_TORRYN);
-                              }),
-                          child: createSubTitle('Torryn 🐶', 1)),
-                    ),
+                    Expanded(child: torrynLayout()),
                     Expanded(flex: 1, child: socialContainer()),
                     Expanded(
                         flex: 1,
@@ -239,21 +302,29 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => setState(() {
-          launched = launchInBrowser(URL_RESUME);
-        }),
-        tooltip: 'Download Resumé',
-        label: Text(
-          'Resumé',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            fontStyle: FontStyle.normal,
-          ),
-        ),
-        icon: Icon(Icons.download),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton:
+          fabLayout(), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+
+    // Responsive design
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      // Check the sizing information here and return your UI
+      if (sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
+          sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+        return getTabletLayout();
+      }
+
+      return getMobileLayout();
+    });
   }
 }
