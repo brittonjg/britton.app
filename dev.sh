@@ -56,7 +56,7 @@ elif [ "$1" == "version" ] && [ "$2" != "" ]; then
 	# cd functions
 	# npm version --no-git-tag-version "$2" 
 	# cd ../
-	npm version --no-git-tag-version "$2"
+	# npm version --no-git-tag-version "$2"
 	# Add the change files to git and commit
 	# git add package.json package-lock.json functions/package.json functions/package-lock.json 
 	git add package.json package-lock.json
