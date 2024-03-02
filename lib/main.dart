@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'James\' Portfolio',
+      title: 'EM James',
       theme: ThemeData(
           // This is the theme of your application.
           //
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
           disabledColor: Color.fromRGBO(55, 71, 79, 1)),
-      home: MyHomePage(title: 'Britton Portfolio'),
+      home: MyHomePage(title: 'EM James'),
     );
   }
 }
@@ -57,7 +57,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   static const URL_RESUME =
-      'https://drive.google.com/file/d/1XEjVwmp4MIyX0mQTD72hMKk1WmrTArZm/view?usp=sharing';
+      'https://drive.google.com/file/d/1Qtw5ZT1Z_u4j1GSby_FOabVeh_WVPF3Y/view?usp=sharing';
   static const URL_INSTA_TORRYN = 'https://www.instagram.com/torryn_toller';
   static const URL_INSTA_ME = 'https://www.instagram.com/britton.jg/';
   static const URL_LINKEDIN = 'https://www.linkedin.com/in/jgbritton/';
@@ -167,12 +167,13 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.all(PADDING),
           child: Column(
             children: [
+              createMainText('', 1), // Space between text
               createMainText(
-                  'Currently an Engineering Manager at Cuvva for the Growth team.',
+                  'Currently an Engineering Manager at Cuvva, responsible for our short term insurance product',
                   2),
               createMainText('', 1), // Space between text
               createMainText(
-                  'A mobile engineer for 9+ years, now leading and coaching teams to develop, deploy and maintain high quality applications across mobile, web and backend.',
+                  'A highly skilled Engineering Manager, from a mobile engineering backend. Now leading, coaching and delivering projects with a highly functioning multi disciplinary team.',
                   4)
             ],
           )),
