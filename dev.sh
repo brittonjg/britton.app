@@ -59,8 +59,8 @@ elif [ "$1" == "version" ] && [ "$2" != "" ]; then
 	# npm version --no-git-tag-version "$2"
 	# Add the change files to git and commit
 	# git add package.json package-lock.json functions/package.json functions/package-lock.json 
-	git add package.json package-lock.json
-	git commit -m "Updating version to $2"
+	# git add package.json package-lock.json
+	# git commit -m "Updating version to $2"
 	# Create a tag and push
 	git tag -a "v$2" -m "Tag v$2"
 	git push --follow-tags
